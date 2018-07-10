@@ -1,17 +1,14 @@
 .title {
   align-items: center;
   display: flex;
+  color: $black;
+  font-size: 1.45rem;
 
-  &-icon {
+  &::before {
     background: url("assets/triangle.svg") center center no-repeat;
+    content: '';
     height: 90px;
+    margin-right: -1.1rem;
     width: 70px;
-  }
-
-  &-content {
-    color: $black;
-    margin-left: -1.1rem;
-    font-size: 1.45rem;
-    @include font($font-family);
   }
 }
