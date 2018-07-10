@@ -1,0 +1,55 @@
+.techs {
+  padding: 1rem;
+  @include font($font-family);
+
+  .tech {
+    align-items: center;
+    background-color: $green;
+    border-radius: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    height: 20rem;
+    margin: 0.7rem 0 0 0.7rem;
+    max-width: 13rem;
+    padding: 1rem;
+    position: relative;
+    text-align: center;
+    width: 100%;
+
+    &-logo {
+      display: block;
+      margin-bottom: 0.7rem;
+      max-width: 100px;
+    }
+
+    &-title,
+    &-release,
+    &-desc {
+      @include font($font-family);
+    }
+
+    &-title {
+      font-size: 16px;
+      margin-bottom: 0.7rem;
+    }
+
+    &-release {
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+
+    &::before {
+      border: 1px solid $green;
+      border-radius: 0.5rem;
+      content: "";
+      flex: none;
+      height: calc(20rem - 2px);
+      left: -0.7rem;
+      max-width: calc(13rem - 2px);
+      position: absolute;
+      top: -0.7rem;
+      width: 100%;
+      z-index: -1;
+    }
+  }
+}
