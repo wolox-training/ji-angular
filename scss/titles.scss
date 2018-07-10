@@ -1,0 +1,14 @@
+.title {
+  align-items: center;
+  display: flex;
+  color: $black;
+  font-size: $text-big;
+
+  &::before {
+    background: url("assets/triangle.svg") center center no-repeat;
+    content: '';
+    height: 90px;
+    margin-right: -18px;
+    width: 70px;
+  }
+}
