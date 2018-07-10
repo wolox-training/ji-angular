@@ -1,0 +1,8 @@
+.title {
+  @include font($font-family);
+  color: red;
+
+  &::before {
+    content: url('assets/triangle.svg');
+  }
+}
