@@ -1,8 +1,17 @@
 .title {
-  @include font($font-family);
-  color: red;
+  align-items: center;
+  display: flex;
 
-  &::before {
-    content: url('assets/triangle.svg');
+  &-icon {
+    background: url("assets/triangle.svg") center center no-repeat;
+    height: 90px;
+    width: 70px;
+  }
+
+  &-content {
+    color: $black;
+    margin-left: -1.1rem;
+    font-size: 1.45rem;
+    @include font($font-family);
   }
 }
