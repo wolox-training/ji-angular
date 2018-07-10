@@ -2,9 +2,8 @@
   align-items: center;
   color: $black;
   display: flex;
-  font-size: 1.45rem;
-  margin-bottom: 1rem;
   font-size: $text-big;
+  margin-bottom: 12px;
 
   &::before {
     background: url("assets/triangle.svg") center center no-repeat;
