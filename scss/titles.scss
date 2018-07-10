@@ -4,12 +4,13 @@
   display: flex;
   font-size: 1.45rem;
   margin-bottom: 1rem;
+  font-size: $text-big;
 
   &::before {
     background: url("assets/triangle.svg") center center no-repeat;
     content: '';
     height: 90px;
-    margin-right: -1.1rem;
+    margin-right: -18px;
     width: 70px;
   }
 }

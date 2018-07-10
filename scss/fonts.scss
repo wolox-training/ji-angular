@@ -1,6 +1,8 @@
 @import 'https://fonts.googleapis.com/css?family=Roboto:300,400,700';
-$font-family: 'Roboto', sans-serif;
+$text-big: 24px;
+$text-medium: 16px;
+$text-small: 12px;
 
 * {
-  @include font($font-family);
+  font-family: 'Roboto', sans-serif;
 }

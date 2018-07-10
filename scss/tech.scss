@@ -1,6 +1,5 @@
 .techs {
   padding: 1rem;
-  @include font($font-family);
 
   .tech {
     align-items: center;
@@ -20,12 +19,6 @@
       display: block;
       margin-bottom: 0.7rem;
       max-width: 100px;
-    }
-
-    &-title,
-    &-release,
-    &-desc {
-      @include font($font-family);
     }
 
     &-title {
