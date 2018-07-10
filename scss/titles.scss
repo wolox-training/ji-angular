@@ -2,13 +2,13 @@
   align-items: center;
   display: flex;
   color: $black;
-  font-size: 1.45rem;
+  font-size: $text-big;
 
   &::before {
     background: url("assets/triangle.svg") center center no-repeat;
     content: '';
     height: 90px;
-    margin-right: -1.1rem;
+    margin-right: -18px;
     width: 70px;
   }
 }
