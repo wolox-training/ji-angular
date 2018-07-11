@@ -15,18 +15,18 @@
     text-align: center;
     width: 100%;
 
-    &-logo {
+    .logo {
       display: block;
       margin-bottom: 10px;
       max-width: 100px;
     }
 
-    &-title {
+    .title {
       font-size: $text-medium;
       margin-bottom: 10px;
     }
 
-    &-release {
+    .release {
       font-weight: 700;
       margin-bottom: 12px;
     }
