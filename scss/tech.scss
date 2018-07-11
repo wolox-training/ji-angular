@@ -16,6 +16,7 @@
     align-items: center;
     display: flex;
     height: 100px;
+    justify-content: center;
     margin-bottom: 12px;
     width: 100px;
 
@@ -32,6 +33,10 @@
 
   .tech-release {
     font-weight: 700;
+    margin-bottom: 12px;
+  }
+
+  .tech-desc {
     margin-bottom: 12px;
   }
 
