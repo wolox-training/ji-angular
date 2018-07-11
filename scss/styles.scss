@@ -1,0 +1,10 @@
+.techs-container {
+  margin: 0 30px;
+
+  .techs {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 12px 65px 100px;
+  }
+}
