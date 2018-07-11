@@ -1,48 +1,48 @@
-.techs {
+.tech {
+  align-items: center;
+  background-color: $green;
+  border-radius: 7px;
+  display: flex;
+  flex-basis: 22%;
+  flex-direction: column;
+  margin: 10px 0 16px 10px;
+  min-height: 280px;
   padding: 12px;
+  position: relative;
+  text-align: center;
+  width: 100%;
 
-  .tech {
-    align-items: center;
-    background-color: $green;
-    border-radius: 7px;
+  .tech-logo {
     display: flex;
-    flex-direction: column;
-    height: 310px;
-    margin: 10px 0 0 10px;
-    max-width: 215px;
-    padding: 12px;
-    position: relative;
-    text-align: center;
-    width: 100%;
+    align-items: center;
+    height: 100px;
+    width: 100px;
 
-    .tech-logo {
-      display: block;
-      margin-bottom: 10px;
-      max-width: 100px;
+    .tech-img {
+      max-width: 100%;
     }
+  }
 
-    .tech-title {
-      font-size: $text-medium;
-      margin-bottom: 10px;
-    }
+  .tech-title {
+    font-size: $text-medium;
+    margin-bottom: 10px;
+  }
 
-    .tech-release {
-      font-weight: 700;
-      margin-bottom: 12px;
-    }
+  .tech-release {
+    font-weight: 700;
+    margin-bottom: 12px;
+  }
 
-    &::before {
-      border: 1px solid $green;
-      border-radius: 7px;
-      content: "";
-      flex: none;
-      height: 308px;
-      left: -10px;
-      max-width: 213px;
-      position: absolute;
-      top: -10px;
-      width: 100%;
-      z-index: -1;
-    }
+  &::before {
+    border: 1px solid $green;
+    border-radius: 7px;
+    content: "";
+    flex: none;
+    left: -10px;
+    height: calc(100% - 2px);
+    position: absolute;
+    top: -10px;
+    width: calc(100% - 2px);
+    z-index: -1;
   }
 }
