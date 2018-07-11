@@ -16,9 +16,14 @@
     width: 100%;
 
     .tech-logo {
-      display: block;
-      margin-bottom: 10px;
-      max-width: 100px;
+      display: flex;
+      align-items: center;
+      height: 100px;
+      width: 100px;
+  
+      .tech-img {
+        max-width: 100%;
+      }
     }
 
     .tech-title {
