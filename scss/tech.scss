@@ -28,4 +28,15 @@
     grid-area: feature-card;
     align-self: center;
   }
+
+  @media screen and (max-width: 1024px) {
+    border-bottom: 2px solid $green;
+    border-radius: 0;
+    margin: 0 30px;
+    width: calc(100% - 60px);
+
+    &:last-of-type {
+      border: none;
+    }
+  }
 }
