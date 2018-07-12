@@ -4,7 +4,7 @@
   color: $white;
   display: flex;
   flex-direction: column;
-  padding: 40px 0 30px;
+  padding: 40px 20px 30px;
   text-align: center;
 
   .footer-disc {
@@ -17,6 +17,5 @@
     align-self: flex-end;
     font-size: 11px;
     font-weight: 300;
-    margin-right: 20px;
   }
 }
