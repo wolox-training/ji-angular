@@ -1,5 +1,10 @@
+.page-container {
+  display: flex;
+  flex-direction: column;
+}
+
 .techs-container {
-  margin: 0 30px;
+  margin: 160px 30px 0;
 
   .techs {
     display: flex;

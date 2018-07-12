@@ -1,0 +1,22 @@
+.navbar {
+  align-items: center;
+  background-color: $white;
+  box-shadow: 0 0 20px -3px $black;
+  display: flex;
+  height: 90px;
+  justify-content: space-between;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+
+  .navbar-logo,
+  .navbar-title {
+    padding: 0 12px;
+  }
+
+  .navbar-logo {
+    max-height: 30px;
+  }
+}
