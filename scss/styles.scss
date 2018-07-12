@@ -15,20 +15,10 @@
     display: grid;
     grid-gap: 20px;
     grid-template-areas:
-      "title title title title title"
-      ". feature-card card card .";
-    grid-template-columns: repeat(5, 1fr);
+      "feature-card card card"
+      "feature-card card card";
+    grid-template-columns: repeat(3, 1fr);
     grid-template-rows: auto;
-    margin-bottom: 80px;
-
-    .other-techs {
-      border-left: 2px solid $green;
-      display: grid;
-      grid-area: card;
-      grid-auto-flow: row;
-      grid-row-gap: 30px;
-      grid-template-columns: repeat(2, 1fr);
-      padding: 0 15px;
-    }
+    margin: 0 160px 80px;
   }
 }

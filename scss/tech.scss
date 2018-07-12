@@ -1,6 +1,5 @@
 .tech {
   align-items: center;
-  border-radius: 7px;
   display: flex;
   flex-direction: column;
   min-height: 280px;
@@ -25,7 +24,8 @@
   }
 
   &.featured-tech {
+    border-right: 2px solid $green;
     grid-area: feature-card;
-    align-self: center;
+    justify-content: center;
   }
 }
