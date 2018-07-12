@@ -1,6 +1,9 @@
 .footer {
+  align-items: center;
   background-color: $blue;
   color: $white;
+  display: flex;
+  flex-direction: column;
   padding: 40px 0 30px;
   text-align: center;
 
@@ -11,9 +14,9 @@
   }
 
   .footer-copyright {
+    align-self: flex-end;
     font-size: 11px;
     font-weight: 300;
-    padding-right: 20px;
-    text-align: right;
+    margin-right: 20px;
   }
 }
