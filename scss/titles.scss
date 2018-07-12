@@ -3,11 +3,11 @@
   color: $black;
   display: flex;
   font-size: $text-big;
-  margin-bottom: 12px;
+  grid-area: title;
 
   &::before {
     background: url("assets/triangle.svg") center center no-repeat;
-    content: '';
+    content: "";
     height: 90px;
     margin-right: -18px;
     width: 70px;
