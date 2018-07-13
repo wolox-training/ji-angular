@@ -1,0 +1,85 @@
+@import '../../scss/colors';
+
+.register-form {
+  align-items: center;
+  background-color: $wild-sand;
+  border-top: 4px solid $blue;
+  display: flex;
+  flex-direction: column;
+  left: 50%;
+  max-width: 350px;
+  padding: 30px 20px 20px;
+  position: fixed;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+
+  .logo {
+    max-height: 40px;
+  }
+
+  .title {
+    letter-spacing: 6px;
+    margin: 10px 0 30px;
+    text-transform: uppercase;
+  }
+
+  .label,
+  .input,
+  .btn,
+  .separator {
+    width: 100%;
+  }
+
+  .label {
+    line-height: 2;
+    margin-bottom: 10px;
+  }
+
+  .input {
+    border-radius: 7px;
+    display: block;
+    padding: 10px;
+
+    &.ng-invalid.ng-touched,
+    &.invalid {
+      border: 1px solid red;
+    }
+  }
+
+  .btn {
+    border-radius: 7px;
+    margin: 20px 0;
+    padding: 15px 0;
+    transition: all 0.3s ease-in-out;
+
+    &.sign-up {
+      background-color: $green;
+      color: $white;
+
+      &:hover {
+        background-color: darken($color: $green, $amount: 10);
+      }
+    }
+
+    &.login {
+      border: 2px solid $green;
+      color: $green;
+
+      &:hover {
+        background-color: $green;
+        color: $white;
+      }
+    }
+  }
+
+  .separator {
+    width: 100%;
+  }
+
+  .alert {
+    align-self: flex-start;
+    font-size: 11px;
+    color: red;
+  }
+}

@@ -1,0 +1,27 @@
+<form class="register-form" [formGroup]="registerForm" (ngSubmit)="register(registerForm.value)">
+  <img class="logo" src="../../../assets/wolox_logo.svg" />
+  <h1 class="title">Books</h1>
+  <label class="label" for="firstName">
+    First Name
+    <input class="input" id="firstName" type="text" formControlName="firstName" />
+  </label>
+  <div class="alert" *ngIf="!registerForm.controls['firstName'].valid && registerForm.controls['firstName'].touched">{{fieldRequired}}</div>
+  <label class="label" for="lastName">
+    Last Name
+    <input class="input" id="lastName" type="text" formControlName="lastName" />
+  </label>
+  <div class="alert" *ngIf="!registerForm.controls['lastName'].valid && registerForm.controls['lastName'].touched">{{fieldRequired}}</div>
+  <label class="label" for="email">
+    Email
+    <input class="input" id="email" type="email" formControlName="email" />
+  </label>
+  <div class="alert" *ngIf="!registerForm.controls['email'].valid && registerForm.controls['email'].touched">{{validEmail}}</div>
+  <label class="label" for="password">
+    Password
+    <input class="input" id="password" type="password" formControlName="password" />
+  </label>
+  <div class="alert" *ngIf="!registerForm.controls['password'].valid && registerForm.controls['password'].touched">{{fieldRequired}}</div>
+  <button class="btn sign-up" type="submit" [disabled]="!registerForm.valid">Sign Up</button>
+  <hr class="separator">
+  <button class="btn login" type="button">Login</button>
+</form>
