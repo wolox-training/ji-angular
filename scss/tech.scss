@@ -29,7 +29,7 @@
     justify-content: center;
   }
 
-  @media #{$break-point} {
+  @media #{$mobile-devices} {
     border-bottom: 2px solid $green;
     border-radius: 0;
     padding: 0 42px;

@@ -1,4 +1,4 @@
-$break-point: 'screen and (max-width: 1024px)';
+$mobile-devices: 'screen and (max-width: 1024px)';
 
 .page-container {
   display: grid;
@@ -23,7 +23,7 @@ $break-point: 'screen and (max-width: 1024px)';
     grid-template-rows: auto;
     margin: 0 160px 80px;
 
-    @media #{$break-point} {
+    @media #{$mobile-devices} {
       grid-template-areas:
       "title"
       "feature-card"

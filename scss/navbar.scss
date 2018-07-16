@@ -21,7 +21,7 @@
     max-height: 30px;
   }
 
-  @media #{$break-point} {
+  @media #{$mobile-devices} {
     .navbar-title {
       display: none;
     }

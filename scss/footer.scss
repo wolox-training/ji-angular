@@ -20,7 +20,7 @@
     font-weight: 300;
   }
 
-  @media #{$break-point} {
+  @media #{$mobile-devices} {
     .footer-disc {
       font-size: $text-small;
     }
