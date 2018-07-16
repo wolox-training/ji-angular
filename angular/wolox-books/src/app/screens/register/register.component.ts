@@ -1,40 +1,53 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
+import {
+  FormBuilder,
+  FormGroup,
+  Validators,
+  FormControl
+} from '@angular/forms';
+import { UserService } from '../../components/services/user/user.service';
 
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.scss']
 })
-export class RegisterComponent {
 
+export class RegisterComponent {
   registerForm: FormGroup;
   fieldRequired = 'This field is required';
   validEmail = 'Enter a valid email';
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, private userService: UserService) {
     this.registerForm = fb.group({
-      'firstName': [null, Validators.required],
-      'lastName': [null, Validators.required],
-      'email': [null, Validators.compose([Validators.email, Validators.required])],
-      'password': [null, Validators.compose([Validators.minLength(6), Validators.required])]
+      firstName: [null, Validators.required],
+      lastName: [null, Validators.required],
+      email: [
+        null,
+        Validators.compose([Validators.email, Validators.required])
+      ],
+      password: [
+        null,
+        Validators.compose([Validators.minLength(6), Validators.required])
+      ]
     });
   }
 
   register(data) {
     if (this.registerForm.valid) {
-      const registration = `
-    {
-      "user": {
-        "email": ${data.email},
-        "password": ${data.password},
-        "password_confirmation": ${data.password},
-        "first_name": ${data.firstName},
-        "last_name": ${data.lastName},
-        "locale": "en"
-      }
-    }`;
-    console.log(registration);
+      const user = {
+        user: {
+          email: data.email,
+          password: data.password,
+          password_confirmation: data.password,
+          first_name: data.firstName,
+          last_name: data.lastName,
+          locale: 'en'
+        }
+      };
+      this.userService
+        .createUser(user)
+        .subscribe(() => console.log('Success!'), () => console.log('Error!'));
     } else {
       this.validateAllFormFields(this.registerForm);
     }
