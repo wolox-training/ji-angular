@@ -20,7 +20,7 @@
     font-weight: 300;
   }
 
-  @media screen and (max-width: 1024px) {
+  @media #{$break-point} {
     .footer-disc {
       font-size: $text-small;
     }
@@ -32,7 +32,7 @@
 
     .footer-copyright {
       align-self: center;
-      font-size: 9px;
+      font-size: 10px;
     }
   }
 }

@@ -29,11 +29,10 @@
     justify-content: center;
   }
 
-  @media screen and (max-width: 1024px) {
+  @media #{$break-point} {
     border-bottom: 2px solid $green;
     border-radius: 0;
-    margin: 0 30px;
-    width: calc(100% - 60px);
+    padding: 0 42px;
 
     &.featured-tech {
       border: none;
