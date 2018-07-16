@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-register',
@@ -22,7 +22,8 @@ export class RegisterComponent {
   }
 
   register(data) {
-    const registration = `
+    if (this.registerForm.valid) {
+      const registration = `
     {
       "user": {
         "email": ${data.email},
@@ -34,6 +35,19 @@ export class RegisterComponent {
       }
     }`;
     console.log(registration);
+    } else {
+      this.validateAllFormFields(this.registerForm);
+    }
   }
 
+  validateAllFormFields(formGroup: FormGroup) {
+    Object.keys(formGroup.controls).forEach(field => {
+      const control = formGroup.get(field);
+      if (control instanceof FormControl) {
+        control.markAsTouched({ onlySelf: true });
+      } else if (control instanceof FormGroup) {
+        this.validateAllFormFields(control);
+      }
+    });
+  }
 }
