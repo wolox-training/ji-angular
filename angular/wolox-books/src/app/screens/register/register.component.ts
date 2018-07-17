@@ -5,6 +5,8 @@ import {
   Validators,
   FormControl
 } from '@angular/forms';
+import { Router } from '@angular/router';
+
 import { UserService } from '../../components/services/user/user.service';
 
 @Component({
@@ -18,7 +20,11 @@ export class RegisterComponent {
   fieldRequired = 'This field is required';
   validEmail = 'Enter a valid email';
 
-  constructor(private fb: FormBuilder, private userService: UserService) {
+  constructor(
+    private fb: FormBuilder,
+    private userService: UserService,
+    private router: Router
+  ) {
     this.registerForm = fb.group({
       firstName: [null, Validators.required],
       lastName: [null, Validators.required],
@@ -45,9 +51,13 @@ export class RegisterComponent {
           locale: 'en'
         }
       };
-      this.userService
-        .createUser(user)
-        .subscribe(() => console.log('Success!'), () => console.log('Error!'));
+      this.userService.createUser(user).subscribe(
+        () => {
+          console.log('Success!');
+          this.router.navigate(['login']);
+        },
+        () => console.log('Error!')
+      );
     } else {
       this.validateAllFormFields(this.registerForm);
     }
@@ -62,5 +72,9 @@ export class RegisterComponent {
         this.validateAllFormFields(control);
       }
     });
+  }
+
+  goToLogin() {
+    this.router.navigate(['login']);
   }
 }
