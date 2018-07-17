@@ -21,8 +21,8 @@
       <input class="input" id="password" type="password" formControlName="password" />
     </label>
     <span class="alert" *ngIf="!registerForm.controls['password'].valid && registerForm.controls['password'].touched">{{fieldRequired}}</span>
-    <button class="btn sign-up" type="submit">Sign Up</button>
+    <button class="btn" type="submit">Sign Up</button>
     <hr class="separator">
-    <button class="btn login" type="button" (click)="goToLogin()">Login</button>
+    <button class="btn btn-outline" type="button" (click)="goToLogin()">Login</button>
   </form>
 </div>
