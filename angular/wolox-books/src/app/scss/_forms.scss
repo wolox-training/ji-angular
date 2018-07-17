@@ -1,83 +1,75 @@
 @import "colors";
 
-.form {
+.form-container {
   align-items: center;
-  background-color: $wild-sand;
-  border-top: 4px solid $blue;
   display: flex;
-  flex-direction: column;
-  left: 50%;
-  max-width: 350px;
-  padding: 30px 20px 20px;
-  position: fixed;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  width: 100%;
+  justify-content: center;
+  height: 100%;
 
-  .logo {
-    max-height: 40px;
-  }
-
-  .title {
-    letter-spacing: 6px;
-    margin: 10px 0 30px;
-    text-transform: uppercase;
-  }
-
-  .label,
-  .input,
-  .btn,
-  .separator {
+  .form {
+    background-color: $wild-sand;
+    border-top: 4px solid $blue;
+    display: flex;
+    flex-direction: column;
+    max-width: 350px;
+    padding: 30px 20px 20px;
     width: 100%;
-  }
 
-  .label {
-    line-height: 2;
-    margin-bottom: 10px;
-  }
-
-  .input {
-    border-radius: 7px;
-    display: block;
-    padding: 10px;
-
-    &.ng-invalid.ng-touched,
-    &.invalid {
-      border: 1px solid red;
-    }
-  }
-
-  .btn {
-    background-color: $green;
-    border-radius: 7px;
-    color: $white;
-    margin: 20px 0;
-    padding: 15px 0;
-    transition: all 0.3s ease-in-out;
-
-    &:hover {
-      background-color: darken($color: $green, $amount: 10);
+    .logo {
+      align-self: center;
+      margin-bottom: 20px;
+      max-height: 60px;
     }
 
-    &.btn-outline {
-      background-color: transparent;
-      border: 2px solid $green;
-      color: $green;
+    .label {
+      line-height: 2;
+      margin-bottom: 10px;
+    }
 
-      &:hover {
-        background-color: $green;
-        color: $white;
+    .input {
+      border-radius: 7px;
+      display: block;
+      padding: 10px;
+      width: 100%;
+
+      &.ng-invalid.ng-touched,
+      &.invalid {
+        border: 1px solid $red;
       }
     }
-  }
 
-  .separator {
-    width: 100%;
-  }
+    .btn {
+      background-color: $green;
+      border-radius: 7px;
+      color: $white;
+      margin: 20px 0;
+      padding: 15px 0;
+      transition: all 0.3s ease-in-out;
 
-  .alert {
-    align-self: flex-start;
-    font-size: 11px;
-    color: red;
+      &:hover {
+        background-color: darken($green, 10%);
+      }
+
+      &.btn-outline {
+        background-color: transparent;
+        border: 2px solid $green;
+        color: $green;
+
+        &:hover {
+          background-color: $green;
+          color: $white;
+        }
+      }
+    }
+
+    .separator {
+      width: 100%;
+    }
+
+    .alert {
+      align-self: flex-start;
+      font-size: 11px;
+      color: $red;
+    }
   }
 }
