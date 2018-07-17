@@ -1,15 +1,15 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
-import { UserService } from './../../services/user/user.service';
+import { UserService } from '../../../components/services/user/user.service';
 
 @Component({
-  selector: 'app-auth',
-  templateUrl: './auth.component.html',
-  styleUrls: ['./auth.component.scss']
+  selector: 'app-books',
+  templateUrl: './books.component.html',
+  styleUrls: ['./books.component.scss']
 })
 
-export class AuthComponent {
+export class BooksComponent {
   constructor(private userService: UserService, private router: Router) {}
 
   logout() {

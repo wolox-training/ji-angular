@@ -7,16 +7,15 @@ import {
 } from '@angular/forms';
 import { Router } from '@angular/router';
 
-import { UserService } from '../../components/services/user/user.service';
+import { UserService } from '../../../components/services/user/user.service';
 
 @Component({
-  selector: 'app-register',
-  templateUrl: './register.component.html',
-  styleUrls: ['./register.component.scss']
+  selector: 'app-login',
+  templateUrl: './login.component.html',
+  styleUrls: ['./login.component.scss']
 })
-
-export class RegisterComponent {
-  registerForm: FormGroup;
+export class LoginComponent {
+  loginForm: FormGroup;
   fieldRequired = 'This field is required';
   validEmail = 'Enter a valid email';
 
@@ -25,9 +24,7 @@ export class RegisterComponent {
     private userService: UserService,
     private router: Router
   ) {
-    this.registerForm = fb.group({
-      firstName: [null, Validators.required],
-      lastName: [null, Validators.required],
+    this.loginForm = fb.group({
       email: [
         null,
         Validators.compose([Validators.email, Validators.required])
@@ -39,27 +36,20 @@ export class RegisterComponent {
     });
   }
 
-  register(data) {
-    if (this.registerForm.valid) {
+  login(data) {
+    if (this.loginForm.valid) {
       const user = {
-        user: {
+        session: {
           email: data.email,
-          password: data.password,
-          password_confirmation: data.password,
-          first_name: data.firstName,
-          last_name: data.lastName,
-          locale: 'en'
+          password: data.password
         }
       };
-      this.userService.createUser(user).subscribe(
-        () => {
-          console.log('Success!');
-          this.router.navigate(['login']);
-        },
+      this.userService.loginUser(user).subscribe(
+        () => this.router.navigate(['book-list/books']),
         () => console.log('Error!')
       );
     } else {
-      this.validateAllFormFields(this.registerForm);
+      this.validateAllFormFields(this.loginForm);
     }
   }
 
@@ -74,7 +64,7 @@ export class RegisterComponent {
     });
   }
 
-  goToLogin() {
-    this.router.navigate(['login']);
+  goToRegister() {
+    this.router.navigate(['unauth/sign-up']);
   }
 }
