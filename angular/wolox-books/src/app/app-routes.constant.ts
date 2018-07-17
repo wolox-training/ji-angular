@@ -1,7 +1,8 @@
-import { AuthComponent } from './components/common/auth/auth.component';
 import { Routes } from '@angular/router';
+
 import { RegisterComponent } from './screens/register/register.component';
 import { LoginComponent } from './screens/login/login.component';
+import { AuthComponent } from './components/common/auth/auth.component';
 
 export const routes: Routes = [
   {
