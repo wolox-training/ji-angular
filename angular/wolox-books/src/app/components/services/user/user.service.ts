@@ -9,9 +9,7 @@ import 'rxjs/add/observable/of';
 
 @Injectable()
 export class UserService {
-  constructor(private http: HttpClient) {
-    this.http = http;
-  }
+  constructor(private http: HttpClient) {}
 
   createUser(user): Observable<User> {
     const headers = new HttpHeaders();
