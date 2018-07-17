@@ -1,76 +1,27 @@
-@import "colors";
-
-.form-container {
-  align-items: center;
-  background-color: $white;
+.form {
   display: flex;
-  justify-content: center;
-  height: 100%;
+  flex-direction: column;
 
-  .form {
-    background-color: $wild-sand;
-    border-top: 4px solid $blue;
-    display: flex;
-    flex-direction: column;
-    max-width: 350px;
-    padding: 30px 20px 20px;
+  .label {
+    line-height: 2;
+    margin-bottom: 10px;
+  }
+
+  .input {
+    border-radius: 7px;
+    display: block;
+    padding: 10px;
     width: 100%;
 
-    .logo {
-      align-self: center;
-      margin-bottom: 20px;
-      max-height: 60px;
+    &.ng-invalid.ng-touched,
+    &.invalid {
+      border: 1px solid $red;
     }
+  }
 
-    .label {
-      line-height: 2;
-      margin-bottom: 10px;
-    }
-
-    .input {
-      border-radius: 7px;
-      display: block;
-      padding: 10px;
-      width: 100%;
-
-      &.ng-invalid.ng-touched,
-      &.invalid {
-        border: 1px solid $red;
-      }
-    }
-
-    .btn {
-      background-color: $green;
-      border-radius: 7px;
-      color: $white;
-      margin: 20px 0;
-      padding: 15px 0;
-      transition: all 0.3s ease-in-out;
-
-      &:hover {
-        background-color: darken($green, 10%);
-      }
-
-      &.btn-outline {
-        background-color: transparent;
-        border: 2px solid $green;
-        color: $green;
-
-        &:hover {
-          background-color: $green;
-          color: $white;
-        }
-      }
-    }
-
-    .separator {
-      width: 100%;
-    }
-
-    .alert {
-      align-self: flex-start;
-      font-size: 11px;
-      color: $red;
-    }
+  .alert {
+    align-self: flex-start;
+    font-size: 11px;
+    color: $red;
   }
 }
