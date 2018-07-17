@@ -4,13 +4,11 @@
   align-items: center;
   display: flex;
   justify-content: center;
-  height: 100%;
+  min-height: 100vh;
 
   .register-form {
     background-color: $wild-sand;
     border-top: 4px solid $blue;
-    display: flex;
-    flex-direction: column;
     max-width: 350px;
     padding: 30px 20px 20px;
     width: 100%;
@@ -21,57 +19,8 @@
       max-height: 60px;
     }
 
-    .label {
-      line-height: 2;
-      margin-bottom: 10px;
-    }
-
-    .input {
-      border-radius: 7px;
-      display: block;
-      padding: 10px;
-      width: 100%;
-
-      &.ng-invalid.ng-touched,
-      &.invalid {
-        border: 1px solid $red;
-      }
-    }
-
-    .btn {
-      border-radius: 7px;
-      margin: 20px 0;
-      padding: 15px 0;
-      transition: all 0.3s ease-in-out;
-
-      &.sign-up {
-        background-color: $green;
-        color: $white;
-
-        &:hover {
-          background-color: darken($green, 10%);
-        }
-      }
-
-      &.login {
-        border: 2px solid $green;
-        color: $green;
-
-        &:hover {
-          background-color: $green;
-          color: $white;
-        }
-      }
-    }
-
     .separator {
       width: 100%;
-    }
-
-    .alert {
-      align-self: flex-start;
-      font-size: 11px;
-      color: $red;
     }
   }
 }
