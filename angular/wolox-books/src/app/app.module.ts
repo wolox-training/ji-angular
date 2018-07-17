@@ -9,12 +9,15 @@ import { RegisterComponent } from './screens/register/register.component';
 import { LoginComponent } from './screens/login/login.component';
 
 import { UserService } from './components/services/user/user.service';
+import { LocalStorageService } from './components/services/local-storage/local-storage.service';
+import { AuthComponent } from './components/common/auth/auth.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     RegisterComponent,
-    LoginComponent
+    LoginComponent,
+    AuthComponent
   ],
   imports: [
     BrowserModule,
@@ -23,7 +26,8 @@ import { UserService } from './components/services/user/user.service';
     AppRoutingModule
   ],
   providers: [
-    UserService
+    UserService,
+    LocalStorageService
   ],
   bootstrap: [AppComponent]
 })
