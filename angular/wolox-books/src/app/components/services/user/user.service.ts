@@ -13,8 +13,11 @@ export class UserService {
 
   createUser(user): Observable<User> {
     const headers = new HttpHeaders();
-    return this.http.post<User>(WoloxBooksApi.baseUrl + '/users', user, {
-      headers
-    });
+    return this.http.post<User>(WoloxBooksApi.baseUrl + '/users', user, {headers});
+  }
+
+  loginUser(user): Observable<User> {
+    const headers = new HttpHeaders();
+    return this.http.post<User>(WoloxBooksApi.baseUrl + '/users/sessions', user, {headers});
   }
 }

@@ -1,4 +1,4 @@
-<form class="register-form" [formGroup]="registerForm" (ngSubmit)="register(registerForm.value)">
+<form class="register-form form" [formGroup]="registerForm" (ngSubmit)="register(registerForm.value)">
   <img class="logo" src="../../../assets/wolox_logo.svg" />
   <h1 class="title">Books</h1>
   <label class="label" for="firstName">
@@ -21,7 +21,7 @@
     <input class="input" id="password" type="password" formControlName="password" />
   </label>
   <div class="alert" *ngIf="!registerForm.controls['password'].valid && registerForm.controls['password'].touched">{{fieldRequired}}</div>
-  <button class="btn sign-up" type="submit">Sign Up</button>
+  <button class="btn" type="submit">Sign Up</button>
   <hr class="separator">
-  <button class="btn login" type="button" (click)="goToLogin()">Login</button>
+  <button class="btn btn-outline" type="button" (click)="goToLogin()">Login</button>
 </form>
