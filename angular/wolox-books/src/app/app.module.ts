@@ -19,6 +19,7 @@ import { UserService } from './components/services/user/user.service';
 import { AuthGuard } from './auth.guard';
 import { UnauthGuard } from './unauth.guard';
 import { InterceptorService } from './app.interceptor';
+import { HeaderComponent } from './components/common/header/header.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { InterceptorService } from './app.interceptor';
     LoginComponent,
     BooksComponent,
     UnauthComponent,
-    BookListComponent
+    BookListComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
