@@ -63,8 +63,4 @@ export class LoginComponent {
       }
     });
   }
-
-  goToRegister() {
-    this.router.navigate(['unauth/sign-up']);
-  }
 }
