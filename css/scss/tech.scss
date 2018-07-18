@@ -28,4 +28,18 @@
     grid-area: feature-card;
     justify-content: center;
   }
+
+  @media #{$mobile-devices} {
+    border-bottom: 2px solid $green;
+    border-radius: 0;
+    padding: 0 42px;
+
+    &.featured-tech {
+      border: none;
+    }
+
+    &:last-of-type {
+      border: none;
+    }
+  }
 }

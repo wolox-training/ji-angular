@@ -1,3 +1,5 @@
+$mobile-devices: 'screen and (max-width: 1024px)';
+
 .page-container {
   display: grid;
   grid-template-rows: 90px auto auto;
@@ -20,5 +22,14 @@
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: auto;
     margin: 0 160px 80px;
+
+    @media #{$mobile-devices} {
+      grid-template-areas:
+      "title"
+      "feature-card"
+      "card";
+      grid-template-columns: 1fr;
+      margin: 0 0 80px;
+    }
   }
 }

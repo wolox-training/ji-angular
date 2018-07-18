@@ -20,4 +20,10 @@
   .navbar-logo {
     max-height: 30px;
   }
+
+  @media #{$mobile-devices} {
+    .navbar-title {
+      display: none;
+    }
+  }
 }
