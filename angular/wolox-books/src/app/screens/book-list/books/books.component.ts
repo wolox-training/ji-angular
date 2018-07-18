@@ -1,7 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { UserService } from '../../../components/services/user/user.service';
+import { BookService } from './../../../components/services/book/book.service';
+import { Book } from './../../../components/models/book.model';
 
 @Component({
   selector: 'app-books',
@@ -9,8 +11,16 @@ import { UserService } from '../../../components/services/user/user.service';
   styleUrls: ['./books.component.scss']
 })
 
-export class BooksComponent {
-  constructor(private userService: UserService, private router: Router) {}
+export class BooksComponent implements OnInit {
+  books: Book[];
+
+  constructor(private userService: UserService, private bookService: BookService, private router: Router) {}
+
+  ngOnInit() {
+    this.bookService.getBookList().subscribe((response) => {
+      this.books = response;
+    });
+  }
 
   logout() {
     this.userService.logoutUser();

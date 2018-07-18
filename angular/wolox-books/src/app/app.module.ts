@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
@@ -11,11 +11,14 @@ import { RegisterComponent } from './screens/unauth/register/register.component'
 import { LoginComponent } from './screens/unauth/login/login.component';
 import { BooksComponent } from './screens/book-list/books/books.component';
 
-import { UserService } from './components/services/user/user.service';
-import { LocalStorageService } from './components/services/local-storage/local-storage.service';
 import { AuthService } from './components/services/auth/auth.service';
+import { BookService } from './components/services/book/book.service';
+import { LocalStorageService } from './components/services/local-storage/local-storage.service';
+import { UserService } from './components/services/user/user.service';
+
 import { AuthGuard } from './auth.guard';
 import { UnauthGuard } from './unauth.guard';
+import { InterceptorService } from './app.interceptor';
 
 @NgModule({
   declarations: [
@@ -36,8 +39,14 @@ import { UnauthGuard } from './unauth.guard';
     UserService,
     LocalStorageService,
     AuthService,
+    BookService,
     AuthGuard,
-    UnauthGuard
+    UnauthGuard,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: InterceptorService,
+      multi: true
+    }
   ],
   bootstrap: [AppComponent]
 })

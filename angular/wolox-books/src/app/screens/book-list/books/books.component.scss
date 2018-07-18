@@ -25,3 +25,43 @@
     }
   }
 }
+
+.books-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: auto;
+  max-width: 1240px;
+  padding: 60px 0 0;
+
+  .book {
+    background-color: $white;
+    box-shadow: 4px 3px 10px -8px $black;
+    margin-bottom: 20px;
+    padding: 20px;
+    width: 290px;
+
+    .img-container {
+      align-items: center;
+      background-color: $wild-sand;
+      display: flex;
+      height: 210px;
+      overflow: hidden;
+
+      .img {
+        width: 100%;
+      }
+    }
+
+    .title,
+    .author {
+      display: block;
+    }
+
+    .title {
+      font-size: 18px;
+      font-weight: 700;
+      margin: 15px 0 5px;
+    }
+  }
+}

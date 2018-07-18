@@ -46,7 +46,7 @@ export class LoginComponent {
       };
       this.userService.loginUser(user).subscribe(
         () => this.router.navigate(['book-list/books']),
-        () => console.log('Error!')
+        (error) => console.log(`Error!: ${error}`)
       );
     } else {
       this.validateAllFormFields(this.loginForm);
