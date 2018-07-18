@@ -1,0 +1,45 @@
+.tech {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  min-height: 280px;
+  padding: 12px;
+  position: relative;
+  text-align: center;
+  width: 100%;
+
+  .tech-logo {
+    height: 100px;
+    max-width: 100px;
+    margin-bottom: 12px;
+  }
+
+  .tech-title {
+    font-size: $text-medium;
+  }
+
+  .tech-release {
+    font-weight: 700;
+    margin: 10px 0 24px;
+  }
+
+  &.featured-tech {
+    border-right: 2px solid $green;
+    grid-area: feature-card;
+    justify-content: center;
+  }
+
+  @media #{$mobile-devices} {
+    border-bottom: 2px solid $green;
+    border-radius: 0;
+    padding: 0 42px;
+
+    &.featured-tech {
+      border: none;
+    }
+
+    &:last-of-type {
+      border: none;
+    }
+  }
+}
