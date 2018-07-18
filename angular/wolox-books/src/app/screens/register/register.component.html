@@ -1,0 +1,28 @@
+<div class="form-container">
+  <form class="register-form form" [formGroup]="registerForm" (ngSubmit)="register(registerForm.value)">
+    <img class="logo" src="../../../assets/logo.png" />
+    <label class="label" for="firstName">
+      First Name
+      <input class="input" id="firstName" type="text" formControlName="firstName" />
+    </label>
+    <span class="alert" *ngIf="!registerForm.controls['firstName'].valid && registerForm.controls['firstName'].touched">{{fieldRequired}}</span>
+    <label class="label" for="lastName">
+      Last Name
+      <input class="input" id="lastName" type="text" formControlName="lastName" />
+    </label>
+    <span class="alert" *ngIf="!registerForm.controls['lastName'].valid && registerForm.controls['lastName'].touched">{{fieldRequired}}</span>
+    <label class="label" for="email">
+      Email
+      <input class="input" id="email" type="email" formControlName="email" />
+    </label>
+    <span class="alert" *ngIf="!registerForm.controls['email'].valid && registerForm.controls['email'].touched">{{validEmail}}</span>
+    <label class="label" for="password">
+      Password
+      <input class="input" id="password" type="password" formControlName="password" />
+    </label>
+    <span class="alert" *ngIf="!registerForm.controls['password'].valid && registerForm.controls['password'].touched">{{fieldRequired}}</span>
+    <button class="btn" type="submit">Sign Up</button>
+    <hr class="separator">
+    <button class="btn btn-outline" type="button">Login</button>
+  </form>
+</div>

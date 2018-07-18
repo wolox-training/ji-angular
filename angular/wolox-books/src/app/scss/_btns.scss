@@ -1,0 +1,22 @@
+.btn {
+  background-color: $green;
+  border-radius: 7px;
+  color: $white;
+  padding: 15px 0;
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    background-color: darken($green, 10%);
+  }
+
+  &.btn-outline {
+    background-color: transparent;
+    border: 2px solid $green;
+    color: $green;
+
+    &:hover {
+      background-color: $green;
+      color: $white;
+    }
+  }
+}
