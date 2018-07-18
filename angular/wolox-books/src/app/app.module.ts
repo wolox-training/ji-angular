@@ -10,6 +10,7 @@ import { BookListComponent } from './screens/book-list/book-list.component';
 import { RegisterComponent } from './screens/unauth/register/register.component';
 import { LoginComponent } from './screens/unauth/login/login.component';
 import { BooksComponent } from './screens/book-list/books/books.component';
+import { HeaderComponent } from './components/common/header/header.component';
 
 import { AuthService } from './components/services/auth/auth.service';
 import { BookService } from './components/services/book/book.service';
@@ -19,7 +20,6 @@ import { UserService } from './components/services/user/user.service';
 import { AuthGuard } from './auth.guard';
 import { UnauthGuard } from './unauth.guard';
 import { InterceptorService } from './app.interceptor';
-import { HeaderComponent } from './components/common/header/header.component';
 
 @NgModule({
   declarations: [
