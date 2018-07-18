@@ -53,7 +53,6 @@ export class RegisterComponent {
       };
       this.userService.createUser(user).subscribe(
         () => {
-          console.log('Success!');
           this.router.navigate(['login']);
         },
         () => console.log('Error!')
@@ -72,9 +71,5 @@ export class RegisterComponent {
         this.validateAllFormFields(control);
       }
     });
-  }
-
-  goToLogin() {
-    this.router.navigate(['login']);
   }
 }
