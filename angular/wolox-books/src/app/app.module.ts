@@ -15,7 +15,7 @@ import { AuthService } from './services/auth/auth.service';
 import { BookService } from './components/services/book/book.service';
 import { LocalStorageService } from './services/local-storage/local-storage.service';
 import { UserService } from './services/user/user.service';
-import { InterceptorService } from './app.interceptor';
+import { InterceptorService } from './interceptors/app.interceptor';
 
 import { AuthGuard } from './guards/auth.guard';
 import { UnauthGuard } from './guards/unauth.guard';
