@@ -23,6 +23,6 @@
     <span class="alert" *ngIf="!registerForm.controls['password'].valid && registerForm.controls['password'].touched">{{fieldRequired}}</span>
     <button class="btn" type="submit">Sign Up</button>
     <hr class="separator">
-    <button class="btn btn-outline" type="button">Login</button>
+    <button class="btn btn-outline" type="button" routerLink="/login">Login</button>
   </form>
 </div>
