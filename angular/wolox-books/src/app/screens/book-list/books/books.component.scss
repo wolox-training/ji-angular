@@ -9,6 +9,7 @@
   padding: 10px;
 
   .container {
+    align-items: center;
     display: flex;
     justify-content: space-between;
     max-width: 1240px;
@@ -18,7 +19,7 @@
       max-height: 40px;
     }
 
-    .logout {
+    .btn {
       font-size: 16px;
       font-weight: 700;
     }
