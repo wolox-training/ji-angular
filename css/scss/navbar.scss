@@ -21,7 +21,7 @@
     max-height: 30px;
   }
 
-  @media screen and (max-width: 1024px) {
+  @media #{$mobile-devices} {
     .navbar-title {
       display: none;
     }
