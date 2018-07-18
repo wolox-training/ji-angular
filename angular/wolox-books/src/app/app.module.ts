@@ -6,20 +6,20 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
 import { UnauthComponent } from './screens/unauth/unauth.component';
-import { BookListComponent } from './screens/book-list/book-list.component';
-import { RegisterComponent } from './screens/unauth/register/register.component';
-import { LoginComponent } from './screens/unauth/login/login.component';
-import { BooksComponent } from './screens/book-list/books/books.component';
+import { AuthComponent } from './screens/auth/auth.component';
+import { RegisterComponent } from './screens/unauth/screens/register/register.component';
+import { LoginComponent } from './screens/unauth/screens/login/login.component';
+import { BooksComponent } from './screens/auth/screens/books/books.component';
 import { HeaderComponent } from './components/common/header/header.component';
 
-import { AuthService } from './components/services/auth/auth.service';
+import { AuthService } from './services/auth/auth.service';
 import { BookService } from './components/services/book/book.service';
-import { LocalStorageService } from './components/services/local-storage/local-storage.service';
-import { UserService } from './components/services/user/user.service';
+import { LocalStorageService } from './services/local-storage/local-storage.service';
+import { UserService } from './services/user/user.service';
+import { InterceptorService } from './interceptors/app.interceptor';
 
-import { AuthGuard } from './auth.guard';
-import { UnauthGuard } from './unauth.guard';
-import { InterceptorService } from './app.interceptor';
+import { AuthGuard } from './guards/auth.guard';
+import { UnauthGuard } from './guards/unauth.guard';
 
 @NgModule({
   declarations: [
@@ -28,7 +28,7 @@ import { InterceptorService } from './app.interceptor';
     LoginComponent,
     BooksComponent,
     UnauthComponent,
-    BookListComponent,
+    AuthComponent,
     HeaderComponent
   ],
   imports: [
