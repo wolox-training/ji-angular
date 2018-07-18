@@ -1,5 +1,5 @@
-application.css
-application.css.map
-.sass-cache
+css/application.css
+css/application.css.map
+css/.sass-cache
 .vscode
 angular/
