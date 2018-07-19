@@ -1,0 +1,47 @@
+@import "../../../../scss/colors";
+
+.books-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: auto;
+  max-width: 1240px;
+  padding: 60px 10px 0;
+
+  .book {
+    background-color: $white;
+    box-shadow: 4px 3px 10px -8px $black;
+    cursor: pointer;
+    margin-bottom: 20px;
+    padding: 20px;
+    transition: all .3s ease-in-out;
+    width: 290px;
+
+    .img-container {
+      align-items: center;
+      background-color: $wild-sand;
+      display: flex;
+      height: 210px;
+      overflow: hidden;
+
+      .img {
+        width: 100%;
+      }
+    }
+
+    .title,
+    .author {
+      display: block;
+    }
+
+    .title {
+      font-size: 18px;
+      font-weight: 700;
+      margin: 15px 0 5px;
+    }
+
+    &:hover {
+      opacity: 0.6;
+    }
+  }
+}
