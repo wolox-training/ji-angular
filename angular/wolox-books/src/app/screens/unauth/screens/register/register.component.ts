@@ -63,13 +63,10 @@ export class RegisterComponent {
   }
 
   validateAllFormFields(formGroup: FormGroup) {
-    Object.keys(formGroup.controls).forEach(field => {
-      const control = formGroup.get(field);
-      if (control instanceof FormControl) {
-        control.markAsTouched({ onlySelf: true });
-      } else if (control instanceof FormGroup) {
-        this.validateAllFormFields(control);
+    for (const i in formGroup.controls) {
+      if (formGroup.controls[i] instanceof FormControl) {
+        formGroup.controls[i].markAsTouched();
       }
-    });
+    }
   }
 }
