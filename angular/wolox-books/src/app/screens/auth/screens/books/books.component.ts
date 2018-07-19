@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
-import { BookService } from './../../../../services/book/book.service';
 import { Book } from './../../../../models/book.model';
 
 @Component({
@@ -12,11 +12,9 @@ import { Book } from './../../../../models/book.model';
 export class BooksComponent implements OnInit {
   books: Book[];
 
-  constructor(private bookService: BookService) {}
+  constructor(private route: ActivatedRoute) {}
 
   ngOnInit() {
-    this.bookService.getBookList().subscribe((response) => {
-      this.books = response;
-    });
+    this.books = this.route.snapshot.data.books;
   }
 }

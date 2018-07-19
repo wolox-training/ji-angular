@@ -1,7 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Router, ActivatedRoute } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 
-import { BookService } from './../../../../services/book/book.service';
 import { Book } from './../../../../models/book.model';
 
 @Component({
@@ -13,11 +12,7 @@ import { Book } from './../../../../models/book.model';
 export class BookDetailComponent implements OnInit {
   detail: Book;
 
-  constructor(
-    private route: ActivatedRoute,
-    private router: Router,
-    private bookService: BookService
-  ) {}
+  constructor(private route: ActivatedRoute) {}
 
   ngOnInit() {
     this.detail = this.route.snapshot.data.detail;

@@ -15,7 +15,7 @@ export class BookService {
     return this.http.get<Book[]>(`${WoloxBooksApi.baseUrl}/books`);
   }
 
-  getBookDetail(id): Observable<any> {
-    return this.http.get(`${WoloxBooksApi.baseUrl}/books/${id}`);
+  getBookDetail(id): Observable<Book> {
+    return this.http.get<Book>(`${WoloxBooksApi.baseUrl}/books/${id}`);
   }
 }
