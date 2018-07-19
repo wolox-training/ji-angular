@@ -10,6 +10,8 @@ import { BookDetailComponent } from './../screens/auth/screens/book-detail/book-
 import { AuthGuard } from '../guards/auth.guard';
 import { UnauthGuard } from '../guards/unauth.guard';
 
+import { GetBookDetailResolver } from '../services/book/resolvers/get-book-detail.resolver';
+
 export const routes: Routes = [
   {
     path: '',
@@ -42,7 +44,10 @@ export const routes: Routes = [
       },
       {
         path: ':id',
-        component: BookDetailComponent
+        component: BookDetailComponent,
+        resolve: {
+          detail: GetBookDetailResolver
+        }
       }
     ]
   },

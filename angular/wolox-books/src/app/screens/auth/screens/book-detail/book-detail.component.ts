@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 
 import { BookService } from './../../../../services/book/book.service';
@@ -20,16 +20,6 @@ export class BookDetailComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.route.params.subscribe(params => {
-      this.bookService.getBookDetail(params.id).subscribe(
-        detail => {
-          this.detail = detail;
-        },
-        error => {
-          console.log(error.message);
-          this.router.navigate(['book-list']);
-        }
-      );
-    });
+    this.detail = this.route.snapshot.data.detail;
   }
 }
