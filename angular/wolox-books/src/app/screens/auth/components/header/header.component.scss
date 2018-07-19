@@ -1,0 +1,28 @@
+@import "../../../../scss/colors";
+
+.header {
+  background-color: $white;
+  border-top: 5px solid $blue;
+  box-shadow: 0 0 20px -6px $black;
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+
+  .container {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    max-width: 1240px;
+    width: 100%;
+
+    .logo {
+      cursor: pointer;
+      max-height: 40px;
+    }
+
+    .btn {
+      font-size: 16px;
+      font-weight: 700;
+    }
+  }
+}
