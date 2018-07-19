@@ -5,7 +5,6 @@ import { AuthComponent } from '../screens/auth/auth.component';
 import { RegisterComponent } from '../screens/unauth/screens/register/register.component';
 import { LoginComponent } from '../screens/unauth/screens/login/login.component';
 import { BooksComponent } from '../screens/auth/screens/books/books.component';
-import { BookDetailComponent } from './../screens/auth/screens/book-detail/book-detail.component';
 
 import { AuthGuard } from '../guards/auth.guard';
 import { UnauthGuard } from '../guards/unauth.guard';
@@ -16,6 +15,11 @@ export const routes: Routes = [
     canActivate: [UnauthGuard],
     component: UnauthComponent,
     children: [
+      {
+        path: '',
+        pathMatch: 'full',
+        redirectTo: 'login'
+      },
       {
         path: 'sign-up',
         component: RegisterComponent
@@ -34,10 +38,6 @@ export const routes: Routes = [
       {
         path: '',
         component: BooksComponent,
-      },
-      {
-        path: ':id',
-        component: BookDetailComponent
       }
     ]
   },
