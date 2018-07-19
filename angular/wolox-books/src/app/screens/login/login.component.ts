@@ -46,9 +46,7 @@ export class LoginComponent {
         }
       };
       this.userService.loginUser(user).subscribe(
-        (response) => {
-          console.log(response);
-        },
+        () => this.router.navigate(['book-list']),
         () => console.log('Error!')
       );
     } else {
