@@ -1,11 +1,16 @@
 <div class="book-detail" *ngIf="detail">
   <div class="img-container">
-    <img [src]="detail.image_url" class="img" alt="{{detail.title}}"/>
+    <img [src]="detail.image_url" class="img" alt="{{detail.title}}" />
   </div>
   <div class="info-container">
-    <h1 class="title">{{detail.title}} <span class="genre">({{detail.genre}})</span></h1>
-    <span class="detail"><strong class="strong">Book author:</strong> {{detail.author}}</span>
-    <span class="detail"><strong class="strong">Publisher:</strong> {{detail.publisher}}</span>
-    <span class="detail"><strong class="strong">Year of publication:</strong> {{detail.year}}</span>
+    <h1 class="title">{{detail.title}}
+      <span class="genre">({{detail.genre}})</span>
+    </h1>
+    <span class="detail">
+      <strong class="strong">Book author:</strong> {{detail.author}}</span>
+    <span class="detail">
+      <strong class="strong">Publisher:</strong> {{detail.publisher}}</span>
+    <span class="detail">
+      <strong class="strong">Year of publication:</strong> {{detail.year}}</span>
   </div>
 </div>
