@@ -10,7 +10,10 @@ import 'rxjs/add/observable/of';
 
 @Injectable()
 export class UserService {
-  constructor(private http: HttpClient, private localStorageService: LocalStorageService) {}
+  constructor(
+    private http: HttpClient,
+    private localStorageService: LocalStorageService
+  ) {}
 
   createUser(user): Observable<User> {
     const headers = new HttpHeaders();
