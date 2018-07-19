@@ -1,6 +1,6 @@
 @import "../../../../scss/colors";
 
-.header {
+:host(app-header) {
   background-color: $white;
   border-top: 5px solid $blue;
   box-shadow: 0 0 20px -6px $black;
