@@ -1,0 +1,18 @@
+<div class="form-container">
+  <form class="login-form form" [formGroup]="loginForm" (ngSubmit)="login(loginForm.value)">
+    <img class="logo" src="../../../assets/logo.png" />
+    <label class="label" for="email">
+      Email
+      <input class="input" id="email" type="email" formControlName="email" />
+    </label>
+    <span class="alert" *ngIf="!loginForm.controls['email'].valid && loginForm.controls['email'].touched">{{validEmail}}</span>
+    <label class="label" for="password">
+      Password
+      <input class="input" id="password" type="password" formControlName="password" />
+    </label>
+    <span class="alert" *ngIf="!loginForm.controls['password'].valid && loginForm.controls['password'].touched">{{fieldRequired}}</span>
+    <button class="btn" type="submit">Login</button>
+    <hr class="separator">
+    <button class="btn btn-outline" type="button" routerLink="/sign-up">Sign Up</button>
+  </form>
+</div>
