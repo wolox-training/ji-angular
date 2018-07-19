@@ -3,21 +3,24 @@
   <file source-language="en" datatype="plaintext" original="ng2.template">
     <body>
       <trans-unit id="bookAuthor" datatype="html">
-        <source>Autor del libro:</source>
+        <source>Book author:</source>
+        <target>Autor del libro:</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/screens/auth/screens/book-detail/book-detail.component.ts</context>
           <context context-type="linenumber">10</context>
         </context-group>
       </trans-unit>
       <trans-unit id="publisher" datatype="html">
-        <source>Editor:</source>
+        <source>Publisher:</source>
+        <target>Editor:</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/screens/auth/screens/book-detail/book-detail.component.ts</context>
           <context context-type="linenumber">12</context>
         </context-group>
       </trans-unit>
       <trans-unit id="year" datatype="html">
-        <source>Año de publicación:</source>
+        <source>Year of publication:</source>
+        <target>Año de publicación:</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/screens/auth/screens/book-detail/book-detail.component.ts</context>
           <context context-type="linenumber">14</context>
