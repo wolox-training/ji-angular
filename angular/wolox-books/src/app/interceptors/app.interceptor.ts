@@ -11,11 +11,13 @@ export class InterceptorService implements HttpInterceptor {
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     const localStorageService = this.injector.get(LocalStorageService);
     const token: any = localStorageService.getValue('user');
-    request = request.clone({
-      setHeaders: {
-        Authorization: `Bearer ${token && token.access_token ? token.access_token : ''}`
-      }
-    });
-    return next.handle(request);
+    if (token && token.access_token) {
+      request = request.clone({
+        setHeaders: {
+          Authorization: `Bearer ${token.access_token}`
+        }
+      });
+      return next.handle(request);
+    }
   }
 }
