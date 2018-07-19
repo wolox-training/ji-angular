@@ -5,6 +5,8 @@ import { User } from '../../models/user.model';
 import { Observable } from 'rxjs';
 import { LocalStorageService } from '../local-storage/local-storage.service';
 
+import 'rxjs/add/operator/map';
+
 @Injectable()
 export class UserService {
   constructor(private http: HttpClient, private localStorageService: LocalStorageService) {}
