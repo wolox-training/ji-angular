@@ -8,7 +8,7 @@ import { AppComponent } from './app.component';
 import { RegisterComponent } from './screens/register/register.component';
 import { LoginComponent } from './screens/login/login.component';
 
-import { UserService } from './components/services/user/user.service';
+import { UserService } from './services/user/user.service';
 
 @NgModule({
   declarations: [
