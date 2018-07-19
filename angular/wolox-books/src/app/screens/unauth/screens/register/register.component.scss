@@ -1,7 +1,8 @@
-@import "../../scss/colors";
+@import "../../../../scss/colors";
 
 :host(app-register) {
   align-items: center;
+  background-color: $white;
   display: flex;
   justify-content: center;
   min-height: 100vh;

@@ -7,16 +7,16 @@ import {
 } from '@angular/forms';
 import { Router } from '@angular/router';
 
-import { UserService } from '../../services/user/user.service';
+import { UserService } from '../../../../services/user/user.service';
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss']
+  selector: 'app-register',
+  templateUrl: './register.component.html',
+  styleUrls: ['./register.component.scss']
 })
 
-export class LoginComponent {
-  loginForm: FormGroup;
+export class RegisterComponent {
+  registerForm: FormGroup;
   fieldRequired = 'This field is required';
   validEmail = 'Enter a valid email';
 
@@ -25,7 +25,9 @@ export class LoginComponent {
     private userService: UserService,
     private router: Router
   ) {
-    this.loginForm = fb.group({
+    this.registerForm = fb.group({
+      firstName: [null, Validators.required],
+      lastName: [null, Validators.required],
       email: [
         null,
         Validators.compose([Validators.email, Validators.required])
@@ -37,20 +39,26 @@ export class LoginComponent {
     });
   }
 
-  login(data) {
-    if (this.loginForm.valid) {
+  register(data) {
+    if (this.registerForm.valid) {
       const user = {
-        session: {
+        user: {
           email: data.email,
-          password: data.password
+          password: data.password,
+          password_confirmation: data.password,
+          first_name: data.firstName,
+          last_name: data.lastName,
+          locale: 'en'
         }
       };
-      this.userService.loginUser(user).subscribe(
-        () => this.router.navigate(['book-list']),
+      this.userService.createUser(user).subscribe(
+        () => {
+          this.router.navigate(['login']);
+        },
         () => console.log('Error!')
       );
     } else {
-      this.validateAllFormFields(this.loginForm);
+      this.validateAllFormFields(this.registerForm);
     }
   }
 
