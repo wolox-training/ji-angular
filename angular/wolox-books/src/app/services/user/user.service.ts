@@ -21,8 +21,4 @@ export class UserService {
       this.localStorageService.setValue('user', response);
     });
   }
-
-  logoutUser() {
-    this.localStorageService.removeValue('user');
-  }
 }
