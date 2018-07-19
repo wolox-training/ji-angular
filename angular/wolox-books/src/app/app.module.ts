@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 
@@ -8,7 +8,8 @@ import { AppComponent } from './app.component';
 import { RegisterComponent } from './screens/register/register.component';
 import { LoginComponent } from './screens/login/login.component';
 
-import { UserService } from './components/services/user/user.service';
+import { UserService } from './services/user/user.service';
+import { LocalStorageService } from './services/local-storage/local-storage.service';
 
 @NgModule({
   declarations: [
@@ -18,13 +19,13 @@ import { UserService } from './components/services/user/user.service';
   ],
   imports: [
     BrowserModule,
-    FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
     AppRoutingModule
   ],
   providers: [
-    UserService
+    UserService,
+    LocalStorageService
   ],
   bootstrap: [AppComponent]
 })
