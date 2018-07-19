@@ -24,7 +24,7 @@ export class GetBookDetailResolver implements Resolve<Book> {
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
   ): Observable<Book> {
-    return this.bookService.getBookDetail(route.params.id).catch(error => {
+    return this.bookService.getBookDetail(route.params.id).catch(() => {
       this.router.navigate(['book-list']);
       return Observable.of('data not available at this time');
     });
