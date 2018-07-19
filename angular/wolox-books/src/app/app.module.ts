@@ -9,6 +9,7 @@ import { RegisterComponent } from './screens/register/register.component';
 import { LoginComponent } from './screens/login/login.component';
 
 import { UserService } from './services/user/user.service';
+import { LocalStorageService } from './services/local-storage/local-storage.service';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { UserService } from './services/user/user.service';
     AppRoutingModule
   ],
   providers: [
-    UserService
+    UserService,
+    LocalStorageService
   ],
   bootstrap: [AppComponent]
 })

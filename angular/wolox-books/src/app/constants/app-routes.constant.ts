@@ -1,45 +1,20 @@
 import { Routes } from '@angular/router';
 
-import { UnauthComponent } from '../screens/unauth/unauth.component';
-import { AuthComponent } from '../screens/auth/auth.component';
-import { RegisterComponent } from '../screens/unauth/screens/register/register.component';
-import { LoginComponent } from '../screens/unauth/screens/login/login.component';
-import { BooksComponent } from '../screens/auth/screens/books/books.component';
-import { BookDetailComponent } from './../screens/auth/screens/book-detail/book-detail.component';
-
-import { AuthGuard } from '../guards/auth.guard';
-import { UnauthGuard } from '../guards/unauth.guard';
+import { RegisterComponent } from '../screens/register/register.component';
+import { LoginComponent } from '../screens/login/login.component';
 
 export const routes: Routes = [
   {
     path: '',
-    canActivate: [UnauthGuard],
-    component: UnauthComponent,
-    children: [
-      {
-        path: 'sign-up',
-        component: RegisterComponent
-      },
-      {
-        path: 'login',
-        component: LoginComponent
-      }
-    ]
+    component: LoginComponent
   },
   {
-    path: 'book-list',
-    canActivate: [AuthGuard],
-    component: AuthComponent,
-    children: [
-      {
-        path: '',
-        component: BooksComponent,
-      },
-      {
-        path: ':id',
-        component: BookDetailComponent
-      }
-    ]
+    path: 'sign-up',
+    component: RegisterComponent
+  },
+  {
+    path: 'login',
+    component: LoginComponent
   },
   {
     path: '**',
