@@ -1,6 +1,6 @@
 @import "../../scss/colors";
 
-.form-container {
+:host(app-login) {
   align-items: center;
   display: flex;
   justify-content: center;
