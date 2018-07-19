@@ -14,6 +14,7 @@ import { UserService } from '../../services/user/user.service';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
 })
+
 export class LoginComponent {
   loginForm: FormGroup;
   fieldRequired = 'This field is required';
@@ -56,13 +57,10 @@ export class LoginComponent {
   }
 
   validateAllFormFields(formGroup: FormGroup) {
-    Object.keys(formGroup.controls).forEach(field => {
-      const control = formGroup.get(field);
-      if (control instanceof FormControl) {
-        control.markAsTouched({ onlySelf: true });
-      } else if (control instanceof FormGroup) {
-        this.validateAllFormFields(control);
+    for (const i in formGroup.controls) {
+      if (formGroup.controls[i] instanceof FormControl) {
+        formGroup.controls[i].markAsTouched();
       }
-    });
+    }
   }
 }

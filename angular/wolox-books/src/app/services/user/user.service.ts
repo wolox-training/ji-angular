@@ -9,7 +9,10 @@ import 'rxjs/add/operator/map';
 
 @Injectable()
 export class UserService {
-  constructor(private http: HttpClient, private localStorageService: LocalStorageService) {}
+  constructor(
+    private http: HttpClient,
+    private localStorageService: LocalStorageService
+  ) {}
 
   createUser(user): Observable<User> {
     const headers = new HttpHeaders();
