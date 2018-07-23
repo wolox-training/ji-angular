@@ -22,6 +22,9 @@ import { InterceptorService } from './interceptors/app.interceptor';
 import { AuthGuard } from './guards/auth.guard';
 import { UnauthGuard } from './guards/unauth.guard';
 
+import { GetBookListResolver } from './screens/auth/screens/books/resolvers/get-book-list.resolver';
+import { GetBookDetailResolver } from './screens/auth/screens/book-detail/resolvers/get-book-detail.resolver';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -46,6 +49,8 @@ import { UnauthGuard } from './guards/unauth.guard';
     BookService,
     AuthGuard,
     UnauthGuard,
+    GetBookDetailResolver,
+    GetBookListResolver,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: InterceptorService,

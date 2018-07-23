@@ -1,8 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { Router, ActivatedRoute } from '@angular/router';
+import { Component, OnInit, Input } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
-import { BookService } from './../../../../services/book/book.service';
-import { Book } from './../../../../models/book.model';
+import { Book } from '../../../../models/book.model';
 
 @Component({
   selector: 'app-book-detail',
@@ -13,23 +12,9 @@ import { Book } from './../../../../models/book.model';
 export class BookDetailComponent implements OnInit {
   detail: Book;
 
-  constructor(
-    private route: ActivatedRoute,
-    private router: Router,
-    private bookService: BookService
-  ) {}
+  constructor(private route: ActivatedRoute) {}
 
   ngOnInit() {
-    this.route.params.subscribe(params => {
-      this.bookService.getBookDetail(params.id).subscribe(
-        detail => {
-          this.detail = detail;
-        },
-        error => {
-          console.log(error.message);
-          this.router.navigate(['book-list']);
-        }
-      );
-    });
+    this.detail = this.route.snapshot.data.detail;
   }
 }
