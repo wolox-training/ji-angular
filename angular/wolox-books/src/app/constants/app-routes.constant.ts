@@ -5,13 +5,13 @@ import { AuthComponent } from '../screens/auth/auth.component';
 import { RegisterComponent } from '../screens/unauth/screens/register/register.component';
 import { LoginComponent } from '../screens/unauth/screens/login/login.component';
 import { BooksComponent } from '../screens/auth/screens/books/books.component';
-import { BookDetailComponent } from './../screens/auth/screens/book-detail/book-detail.component';
+import { BookDetailComponent } from '../screens/auth/screens/book-detail/book-detail.component';
 
 import { AuthGuard } from '../guards/auth.guard';
 import { UnauthGuard } from '../guards/unauth.guard';
 
-import { GetBookListResolver } from './../services/book/resolvers/get-book-list.resolver';
-import { GetBookDetailResolver } from '../services/book/resolvers/get-book-detail.resolver';
+import { GetBookListResolver } from '../screens/auth/screens/books/resolvers/get-book-list.resolver';
+import { GetBookDetailResolver } from '../screens/auth/screens/book-detail/resolvers/get-book-detail.resolver';
 
 export const routes: Routes = [
   {
