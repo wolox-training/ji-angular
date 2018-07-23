@@ -5,6 +5,7 @@ $equalizer-grey: #999;
   box-sizing: border-box;
   font-family: sans-serif;
   margin: 0;
+  outline: none;
   padding: 0;
 }
 
@@ -28,10 +29,6 @@ textarea {
   font-weight: 400;
   line-height: normal;
   margin: 0;
-
-  &:focus {
-    outline: none;
-  }
 }
 
 select {
@@ -89,4 +86,8 @@ li {
 ::placeholder {
   color: $equalizer-grey;
   opacity: 1;
+}
+
+strong {
+  font-weight: 400;
 }
