@@ -7,11 +7,6 @@ export const routes: Routes = [
   UnauthRoute,
   AuthRoute,
   {
-    path: '',
-    pathMatch: 'full',
-    redirectTo: 'login',
-  },
-  {
     path: '**',
     pathMatch: 'full',
     redirectTo: 'login'
