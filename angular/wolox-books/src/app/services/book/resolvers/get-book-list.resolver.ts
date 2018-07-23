@@ -1,5 +1,5 @@
-import { Observable } from 'rxjs';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 import {
   Resolve,
   ActivatedRouteSnapshot,
@@ -8,12 +8,12 @@ import {
 } from '@angular/router';
 
 import { BookService } from './../../../services/book/book.service';
+import { Book } from './../../../models/book.model';
 
 import 'rxjs/add/operator/catch';
-import 'rxjs/add/observable/of';
 
 @Injectable()
-export class GetBookListResolver implements Resolve<any> {
+export class GetBookListResolver implements Resolve<Observable<string | Book[]>> {
   constructor(
     private bookService: BookService,
     private router: Router
@@ -22,7 +22,7 @@ export class GetBookListResolver implements Resolve<any> {
   resolve(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
-  ): Observable<any> {
+  ): Observable<string | Book[]> {
     return this.bookService.getBookList().catch(() => {
       return Observable.of('data not available at this time');
     });
