@@ -8,7 +8,6 @@ import {
 } from '@angular/router';
 
 import { BookService } from './../../../services/book/book.service';
-import { Book } from './../../../models/book.model';
 
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/observable/of';
