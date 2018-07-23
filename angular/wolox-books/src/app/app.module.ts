@@ -11,6 +11,7 @@ import { RegisterComponent } from './screens/unauth/screens/register/register.co
 import { LoginComponent } from './screens/unauth/screens/login/login.component';
 import { BooksComponent } from './screens/auth/screens/books/books.component';
 import { HeaderComponent } from './screens/auth/components/header/header.component';
+import { BookDetailComponent } from './screens/auth/screens/book-detail/book-detail.component';
 
 import { AuthService } from './services/auth/auth.service';
 import { BookService } from './services/book/book.service';
@@ -29,7 +30,8 @@ import { UnauthGuard } from './guards/unauth.guard';
     BooksComponent,
     UnauthComponent,
     AuthComponent,
-    HeaderComponent
+    HeaderComponent,
+    BookDetailComponent
   ],
   imports: [
     BrowserModule,
